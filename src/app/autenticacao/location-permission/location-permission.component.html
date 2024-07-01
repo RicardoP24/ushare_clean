@@ -1,0 +1,41 @@
+<div class="principal">
+    <div class="imagemDesktop">
+        <div class="capaCastanha">
+
+            <div class="logotipo">
+                <img src="../../../assets/icon branco.svg" alt="">
+                <p class="logoText">USHARE</p>
+            </div>
+
+            <p class="slogan">Partilhe e encontre recursos na sua Comunidade</p>
+        </div>
+
+    </div>
+
+    <div class="formulario">
+        <div class="border ">
+            <div class="textoLogin">
+                <h1>PARTILHE A SUA LOCALIZAÇÃO</h1>
+            </div>
+
+                <div class="form">
+                    <div class="conteudo">
+                        <div class="icon">
+                            <fa-icon [icon]="faLock" class="fa-lg"></fa-icon>
+                        </div>
+                        <div class="info_partilha_de_dados">
+                            <p >A sua morada só será utilizada para posicioná-lo na <br/>
+                            comunidade correta. Não partilharemos sua localização a terceiros</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            <div class="botoesForm">
+                <div (click)="navegarFeed()" class="submeter">Finalizar</div>
+                <div (click)="navegarLocationSelection()" class="voltar"> Voltar</div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

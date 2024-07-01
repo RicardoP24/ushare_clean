@@ -1,0 +1,75 @@
+<div class="popup">
+
+
+    <div class="texto-botaox">
+        <h2 class="anuncio">Os meus anúncios</h2>
+        <img (click)="close()" src="assets/fechar.svg" width="20px">
+    </div>
+    <div class="line"></div>
+
+    <div class="options">
+        <div class="artigos" [class.active]="selectedOption === 'pedido'" (click)="selectOption('pedido')">
+            <img src="assets/patient-list-icon.svg" class="iconArt" />
+            <p class="artSoli">Solicitados</p>
+        </div>
+
+        <div class="avaliable" [class.active]="selectedOption === 'disponibilização'" (click)="selectOption('disponibilização')">
+            <img src="assets/popupA.svg" class="iconAvaliable" />
+            <p class="artDisponiveis">Disponibilizados</p>
+        </div>
+
+        <div class="alertas" [class.active]="selectedOption === 'alertas'" (click)="selectOption('alertas')">
+            <img src="assets/Bell.svg" class="iconAlerta" />
+            <p class="alertas">Alertas</p>
+        </div>
+
+        <div class="eventos" [class.active]="selectedOption === 'Evento'" (click)="selectOption('Evento')">
+            <img src="assets/ClipboardCheckOutline.svg" class="iconEventos" />
+            <p class="eventos">Eventos</p>
+        </div>
+
+    </div>
+
+
+    <div class="posts" >
+        <div class="mypost" *ngFor="let post of postsAtivos">
+            <div class="owner">
+                <div class="postAuthor">
+                    <div class="profile-photo">
+                        <img src="assets/ellipse-1-icon.svg">
+                    </div>
+                    <div class="post-author">
+                        <p class="nome">{{post.nomeAutor}}</p>
+                        <p class="data">{{ post.datadepub | date:'dd.MM.yyyy' }}</p>
+                    </div>
+                </div>
+                <button class="botaoInfo">
+                    <img src="assets/informationcircleoutline-icon2.svg" class="iconInfo" />
+                </button>
+            </div>
+            <div class="line"></div>
+
+            <p>{{post.descricao}}</p>
+
+            <div class="post-content">
+                <img width="100%" src={{post.linkimagem}} class="carpic">
+            </div>
+
+            <div class="line"></div>
+
+            <div class="bottom-sec">
+                <div (click)="verInteressados()" class="info">
+                    <img src="assets/Inter.svg">
+                    <p class="inter">Ver interessados</p>
+                </div>
+
+                <div (click)="openComentarios(post)" class="coment">
+                    <img src="assets/staroutline-icon6.svg">
+                    <p class="com">Comentários</p>
+                </div>
+            </div>
+
+            <div class="line"></div>
+        </div>
+    </div>
+</div>

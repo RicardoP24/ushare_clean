@@ -1,0 +1,36 @@
+<div class="popup">
+
+  <div class="texto-botaox">
+    <h2 class="anuncio">Publique o seu anúncio</h2>
+    <img (click)="close()" src="assets/fechar.svg" width="20px" alt="">
+  </div>
+
+  <div class="line"></div>
+
+  <div class="espacamento">
+
+
+    <input #titulo type="text" class="postTitle" placeholder="Titulo" />
+
+
+
+    <mat-form-field>
+      <mat-label>Tipo de anúncio</mat-label>
+      <mat-select #tipoPost>
+        @for (tipo of tipoPosts; track tipo) {
+        <mat-option [value]="tipo.value">{{tipo.viewValue}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+
+    <textarea #descricao class="postDescription" placeholder="Descrição"></textarea>
+    
+    <img #imagem [src]="imageUrl" alt="Selected Image"  >
+    <input #fileInput style="display: none;" type="file" (change)="onFileSelected($event)">
+    <button class="anexar" (click)="fileInput.click()">Anexar Imagem</button>
+
+    <button class="publicar" (click)="publishPost()">Publicar</button>
+  </div>
+
+</div>

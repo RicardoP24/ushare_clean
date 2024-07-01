@@ -1,0 +1,96 @@
+<div class="navbar">
+  <div class="leftSection">
+    <div class="logo">
+      <img src="../../../assets/icone pequeno.png" alt="">
+      <p class="logotext">USHARE</p>
+    </div>
+  </div>
+  <div class="centerSection">
+    <div class="feedIcon" (click)="openFeed()">
+      <fa-icon [icon]="faRss" class="iconP"></fa-icon>
+      <p>Feed</p>
+      <div class="underline"></div>
+    </div>
+    <div class="friendsIcon" (click)="openartg()">
+      <fa-icon [icon]="faArtigo" class="iconP"></fa-icon>
+      <p>Meus artigos</p>
+      <div class="underline"></div>
+    </div>
+    <div class="aboutIcon">
+      <fa-icon [icon]="faAboutUs" class="iconP"></fa-icon>
+      <p>Sobre Nós</p>
+      <div class="underline"></div>
+    </div>
+  </div>
+  <div class="rightSection">
+
+    <div class="Icons">
+      <img src="assets/search-icon-icon.svg" alt="" class="IconS" (click)="opensearch()" />
+      <img src="assets/logout-icon.svg" alt="" class="IconLg" (click)="handleLogoutClick()" />
+    </div>
+
+    <div class="profilePhoto">
+      <p>Name of the person </p>
+    </div>
+
+    <fa-icon [icon]="faHamb" class="iconHamb" (click)="openNav()"></fa-icon>
+  </div>
+  <div #mySidenav class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a href="/feed">Feed</a>
+
+    <p> Sobre nós</p>
+    <p> Logout</p>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="intro">
+    <h1>QUEM SOMOS</h1>
+  </div>
+
+  <div class="vision-mission-values">
+    <div class="vision">
+      <h2>Visão</h2>
+      <p>Ser a principal plataforma de compartilhamento de recursos, promovendo sustentabilidade e cooperação
+        comunitária. Facilitar acesso equitativo aos recursos, fortalecendo a solidariedade coletiva.</p>
+    </div>
+    <div class="mission">
+      <h2>Missão</h2>
+      <p>Facilitar o compartilhamento eficiente e seguro de recursos, reduzindo desperdício e fortalecendo laços
+        comunitários. Promover práticas sustentáveis e impacto ambiental positivo.</p>
+    </div>
+    <div class="values">
+      <h2>Valores</h2>
+      <p>Sustentabilidade, colaboração, Acessibilidade, Transparência, Responsabilidade, Inovação e comunidade.</p>
+    </div>
+  </div>
+
+  <div class="team">
+    <h2>A NOSSA EQUIPA</h2>
+
+    <div class="members">
+      <div class="team-member">
+        <img src="assets/RicardoG.jpeg" alt="Ricardo Gonçalves">
+        <h3>Ricardo Gonçalves</h3>
+        <p>Diretor Executivo & Gestor de Projeto</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/FelipeG.png" alt="Felipe Goes">
+        <h3>Felipe Goes</h3>
+        <p>Gestor de Projeto</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/RicardoP.png" alt="Ricardo Silva">
+        <h3>Ricardo Silva</h3>
+        <p>Engenheiro de Software</p>
+      </div>
+      <div class="team-member">
+        <img src="assets/OsmarG.png" alt="Osmar Graça">
+        <h3>Osmar Graça</h3>
+        <p>Engenheiro de Software</p>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,566 @@
+$main-color: #955E42;
+$branca-cor: #FFFFFF;
+$verde-cor: #52D997;
+$amarelo-cor: #ffc107;
+$vermelho-cor: #dc3545;
+$preto-cor: #000000;
+$texto-normal-cor: #505153;
+$texto-pequeno-cor: #C0C5CF;
+$borda-cor: #828282;
+$icone-cinza-cor: #AEAEAE;
+$circulo-cinza-cor: #D9D9D9;
+
+
+
+.popup {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 750px;
+    height: 600px;
+    justify-items: center;
+    align-items: center;
+
+    .texto-botaox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .dono{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: auto;
+
+            .perfil{
+                margin: 0;
+            }
+        }
+
+        img{
+
+            cursor: pointer;
+
+        }
+    }
+
+
+    .line {
+        max-width: 100%;
+        border-bottom: solid 1px #d9d9d9;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .options{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        overflow-x:auto;
+
+        .artigos{
+            display: flex;
+            cursor: pointer;
+
+            &.active {
+                border-bottom: 3px solid $main-color;
+
+                p{
+                    color: $main-color !important
+                }
+
+                .iconArt{
+                    filter: grayscale(0%);
+                }
+
+            }
+
+            p{
+                font-size: 14px;
+                font-weight: bold;
+                padding: 5px;
+                cursor: pointer;
+                color: #cccccc;
+            }
+            .iconArt{
+                height: 25px;
+                cursor: pointer;
+                filter: grayscale(100%);
+            }
+        }
+
+        .avaliable{
+            display: flex;
+            cursor: pointer;
+
+            &.active {
+                border-bottom: 3px solid $main-color;
+
+                p{
+                    color: $main-color !important
+                }
+                .iconAvaliable{
+                    filter: grayscale(0%);
+                }
+
+            }
+
+
+            p{
+                font-size: 14px;
+                font-weight: bold;
+                padding: 5px;
+                cursor: pointer;
+                color: #cccccc;
+            }
+
+            .iconAvaliable{
+                height: 25px;
+                cursor: pointer;
+                filter: grayscale(100%);
+            }
+        }
+
+        .alertas{
+            display: flex;
+            cursor: pointer;
+
+            &.active {
+                border-bottom: 3px solid $main-color;
+
+                p{
+                    color: $main-color !important
+                }
+
+                .iconAlerta{
+                    filter: grayscale(0%);
+                }
+            }
+
+
+            p{
+                font-size: 14px;
+                font-weight: bold;
+                padding: 5px;
+                cursor: pointer;
+                color: #cccccc;
+            }
+
+
+            .iconAlerta{
+                height: 25px;
+                cursor: pointer;
+                filter: grayscale(100%);
+            }
+        }
+
+        .eventos{
+            display: flex;
+            cursor: pointer;
+
+            &.active {
+                border-bottom: 3px solid $main-color;
+
+                p{
+                    color: $main-color !important
+                }
+
+                .iconEventos{
+                    filter: grayscale(0%);
+                }
+
+            }
+
+
+
+            p{
+                font-size: 14px;
+                font-weight: bold;
+                padding: 5px;
+                cursor: pointer;
+                color: #cccccc;
+            }
+
+            .iconEventos{
+                height: 25px;
+                cursor: pointer;
+                filter: grayscale(100%);
+            }
+        }
+    }
+
+    .posts{
+        overflow-y:auto;
+        width: 100%;
+
+        .mypost{
+            
+            .owner{
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                justify-content: space-between;
+                padding-top: 10px;
+    
+                .postAuthor{
+    
+                    display: flex;
+                    padding-top: 5px;
+    
+                    .nome{
+                        font-weight: bold;
+                    }
+    
+                    .data{
+                        color: #c0c5cf;
+                        font-size: 11px;
+                        font-weight: 600;
+                        font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+                        'Liberation Sans', sans-serif;
+                        padding: 0;
+                        margin-top: -13px;
+                    }
+    
+                    .profile-photo{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        margin-right: 10px;
+                    }
+    
+                }
+                
+            }
+
+
+            .botaoInfo{
+                justify-content: center;
+                align-content: center;
+                border: none;
+                background-color: #FFFFFF;
+                cursor: pointer;
+                
+            }
+            
+            .post-content {
+    
+                .carpic {
+                    object-fit: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 16px;
+                    background-color: #d9d9d9;
+    
+                }
+            }
+    
+            .bottom-sec{
+                display: flex;
+                gap: 5px;
+                justify-content: space-around;
+                align-items: center;
+                margin-left: 10px;
+                padding-bottom: 5px;
+    
+                .info{
+                    cursor: pointer;
+                    display: flex;
+                    gap:5px;
+                }
+    
+    
+                .inter{
+                    margin-top: 5px;
+                    cursor: pointer;
+                }
+    
+    
+                .coment{
+                    cursor: pointer;
+                    display: flex;
+                    gap:5px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+
+                    }
+
+                }
+                
+                
+                .com{
+                    margin-top: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:750px) {
+    .popup {
+        width: 100%;
+
+    
+        .texto-botaox {
+            display: flex;
+            justify-content: space-between;
+    
+            .dono{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+    
+                .perfil{
+                    margin: 0 0 0px;
+                }
+            }
+        }
+    
+    
+        .line {
+            max-width: 100%;
+            border-bottom: solid 1px #d9d9d9;
+            width: 100%;
+            margin: 10px 0;
+        }
+    
+        .options{
+            display: flex;
+            width: 100%;
+            gap: 10px;
+            .artigos{
+                display: flex;
+                cursor: pointer;
+    
+                &.active {
+                    border-bottom: 3px solid $main-color;
+    
+                    p{
+                        color: $main-color !important
+                    }
+    
+                    .iconArt{
+                        filter: grayscale(0%);
+                    }
+    
+                }
+    
+                p{
+                    font-size: 14px;
+                    font-weight: bold;
+                    padding: 5px;
+                    cursor: pointer;
+                    color: #cccccc;
+                }
+                .iconArt{
+                    height: 25px;
+                    cursor: pointer;
+                    filter: grayscale(100%);
+                }
+            }
+    
+            .avaliable{
+                display: flex;
+                cursor: pointer;
+    
+                &.active {
+                    border-bottom: 3px solid $main-color;
+    
+                    p{
+                        color: $main-color !important
+                    }
+                    .iconAvaliable{
+                        filter: grayscale(0%);
+                    }
+    
+                }
+    
+    
+                p{
+                    font-size: 14px;
+                    font-weight: bold;
+                    padding: 5px;
+                    cursor: pointer;
+                    color: #cccccc;
+                }
+    
+                .iconAvaliable{
+                    height: 25px;
+                    cursor: pointer;
+                    filter: grayscale(100%);
+                }
+            }
+    
+            .alertas{
+                display: flex;
+                cursor: pointer;
+    
+                &.active {
+                    border-bottom: 3px solid $main-color;
+    
+                    p{
+                        color: $main-color !important
+                    }
+    
+                    .iconAlerta{
+                        filter: grayscale(0%);
+                    }
+                }
+    
+    
+                p{
+                    font-size: 14px;
+                    font-weight: bold;
+                    padding: 5px;
+                    cursor: pointer;
+                    color: #cccccc;
+                }
+    
+    
+                .iconAlerta{
+                    height: 25px;
+                    cursor: pointer;
+                    filter: grayscale(100%);
+                }
+            }
+    
+            .eventos{
+                display: flex;
+                cursor: pointer;
+    
+                &.active {
+                    border-bottom: 3px solid $main-color;
+    
+                    p{
+                        color: $main-color !important
+                    }
+    
+                    .iconEventos{
+                        filter: grayscale(0%);
+                    }
+    
+                }
+    
+    
+    
+                p{
+                    font-size: 14px;
+                    font-weight: bold;
+                    padding: 5px;
+                    cursor: pointer;
+                    color: #cccccc;
+                }
+    
+                .iconEventos{
+                    height: 25px;
+                    cursor: pointer;
+                    filter: grayscale(100%);
+                }
+            }
+        }
+    
+        .posts{
+            width: 100%;
+            overflow-y:auto;
+            .mypost{
+               
+    
+                .owner{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    justify-content: space-between;
+                    padding-top: 10px;
+        
+                    .postAuthor{
+        
+                        display: flex;
+                        padding-top: 5px;
+        
+                        .nome{
+                            font-weight: bold;
+                        }
+        
+                        .data{
+                            color: #c0c5cf;
+                            font-size: 11px;
+                            font-weight: 600;
+                            font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+                            'Liberation Sans', sans-serif;
+                            padding: 0;
+                            margin-top: -13px;
+                        }
+        
+                        .profile-photo{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            margin-right: 10px;
+                        }
+        
+                    }
+                    
+                }
+                .botaoInfo{
+                    justify-content: center;
+                    align-content: center;
+                    border: none;
+                    background-color: #FFFFFF;
+                    cursor: pointer;
+                    
+                }
+                
+                .post-content {
+        
+                    .carpic {
+                        object-fit: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        border-radius: 16px;
+                        background-color: #d9d9d9;
+        
+                    }
+                }
+        
+                .bottom-sec{
+                    display: flex;
+                    gap: 5px;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 10px;
+                    padding-bottom: 5px;
+        
+                    .info{
+                        cursor: pointer;
+                     }
+        
+        
+                    .inter{
+                        margin-top: 5px;
+                        cursor: pointer;
+                    }
+        
+        
+                    .coment{
+                        cursor: pointer;
+                    }
+                    
+                    
+                    .com{
+                        margin-top: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    
+}

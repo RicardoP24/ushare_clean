@@ -1,0 +1,25 @@
+<div id="interessados-popup" class="inter-container" [style.display]="showbox ? 'block' : 'none'">
+    <div class="inter-header">
+        <div class="inter-titulo">
+            <h1 class="inter-text">Interessados por - </h1>
+            <h1 class="titulo">{{titulo }}</h1>
+
+        </div>
+        <button class="fechar" (click)="close()">
+            <img src="assets/fechar.svg" class="icon2" />
+        </button>
+    </div>
+    <div class="line1"></div>
+
+    <div *ngFor="let user of users" class="inter-body">
+        <div class="profile-photo">
+            <img src="assets/ellipse-1-icon.svg" alt="Profile Photo">
+            
+        </div>
+        <div   class="author">
+            <p class="nome">{{user.nome}}</p>
+            <p class="status">Active now</p>
+        </div>
+  
+    </div>
+</div>

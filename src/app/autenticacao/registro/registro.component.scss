@@ -1,0 +1,414 @@
+$primaria-cor: #955E42;
+$branca-cor: #FFFFFF;
+$verde-cor: #52D997;
+$amarelo-cor: #ffc107;
+$vermelho-cor: #dc3545;
+$preto-cor:#000000;
+$texto-normal-cor:#505153;
+$texto-pequeno-cor:#C0C5CF;
+$borda-cor:#828282;
+$icone-cinza-cor:#AEAEAE; 
+$circulo-cinza-cor:#D9D9D9; 
+
+// Function to set transparency in colors
+@function transparentize($color, $alpha: 1) {
+  @return rgba($color, $alpha);
+}
+
+.principal{
+    display: flex;
+    max-height:100vh;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+    .imagemDesktop{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100%;
+        width: 50%;
+        background: url('../../../assets/comunidade.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 15px 4px 46px transparentize($preto-cor,0.25);
+
+        .capaCastanha{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            gap:15px;
+            line-height: 40px;
+            height: 100%;
+            width: 100%;
+            background-color: transparentize($primaria-cor,0.8);
+
+            .logotipo{
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+
+                img{
+                    height: 150px;
+                    width: 150px;
+                }
+
+                .logoText{
+                    font-size: 40px;
+                    font-weight: 800;
+                    color: white;
+                }
+            }
+
+            .slogan{
+                color: white;
+                font-size: 32px;
+                font-weight: 500;
+            }
+
+        }
+
+        
+    }
+    
+
+    .formulario{
+        height: 100%;
+        width:50%;
+        display: flex;
+        flex-direction: column;
+        gap:2rem;
+        align-items: center;
+        justify-content: center;
+
+        .logotipo{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                height: 100px;
+                width: 100px;
+            }
+
+            .logoText{
+                font-size: 30px;
+                font-weight: 800;
+                color: $primaria-cor;
+            }
+        }
+
+        
+        .google-email{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .google{
+                border-radius: 30px;
+                cursor: pointer;
+                display: flex;
+                border: 1px solid $borda-cor;
+                min-width: 400px;
+                height: 32px;
+                gap:0.5rem;
+                align-items: center;
+                justify-content: center;
+    
+                p{
+                    color: $texto-normal-cor;
+                    font-weight: 200;
+                    margin: 0;
+                }
+    
+    
+            }
+            .emailLinha{
+                display: flex;
+                gap:0.5rem;
+                align-items: center;
+                justify-content: center;
+    
+                .linha1{
+                    height: 0.5px;
+                    width: 130px;
+                    background-color: $borda-cor;
+                }
+                p{
+                    color: $texto-normal-cor;
+    
+                }
+                .linha2{
+                    height: 0.5px;
+                    width: 130px;
+                    background-color: $borda-cor;
+                }
+            }
+        }
+
+
+        .textoLogin{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            h1{
+                font-weight: 800;
+                color: $preto-cor;
+            }
+    
+            .linha{
+                width: 130px;
+                height: 8px;
+                background-color: $primaria-cor;
+            }
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+
+            input{
+                border: 1px solid $borda-cor;
+                border-radius: 8px;
+                height: 40px;
+                padding: 8px;
+                min-width: 400px;
+            }
+
+            .passEsqueceu{
+                min-width: 400px;
+                p{
+                    cursor: pointer;
+                    color: $primaria-cor;
+                    font-weight: 300;
+                }
+            }
+
+        }
+        .submeter{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 60px;
+            width: 208px;
+            border-radius: 32px;
+            background-color: $primaria-cor;
+            color: $branca-cor;
+
+            &:hover{
+
+                animation: scaleAnimation 0.3s ease forwards;
+            }
+
+        }
+        .fazerLogin{
+            display: flex;
+            gap: 0.2rem;
+            align-items: center;
+            width: 200px;
+
+            .p1{
+                color: $texto-normal-cor;
+            }
+            .p2{
+                color: $primaria-cor;
+                cursor: pointer;
+                font-weight: 300;
+            }
+        }
+    }
+
+ 
+}
+
+@keyframes scaleAnimation {
+    from {
+      transform:scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+  }
+  
+ 
+
+@media  (max-width:900px) {
+    .principal{
+        display: flex;
+        max-height:100vh;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    
+        .imagemDesktop{
+            display: none;
+        }
+    
+        
+    
+        .formulario{
+            height: 100%;
+            width:50%;
+            display: flex;
+            flex-direction: column;
+            gap:2rem;
+            align-items: center;
+            justify-content: center;
+    
+            .logotipo{
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+    
+                img{
+                    height: 100px;
+                    width: 100px;
+                }
+    
+                .logoText{
+                    font-size: 30px;
+                    font-weight: 800;
+                    color: $primaria-cor;
+                }
+            }
+    
+            
+            .google-email{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+    
+                .google{
+                    border-radius: 30px;
+                    cursor: pointer;
+                    display: flex;
+                    border: 1px solid $borda-cor;
+                    min-width: 300px;
+                    height: 32px;
+                    gap:0.5rem;
+                    align-items: center;
+                    justify-content: center;
+        
+                    p{
+                        color: $texto-normal-cor;
+                        font-weight: 200;
+                    }
+        
+        
+                }
+                .emailLinha{
+                    display: flex;
+                    gap:0.5rem;
+                    align-items: center;
+                    justify-content: center;
+        
+                    .linha1{
+                        height: 0.5px;
+                        width: 80px;
+                        background-color: $borda-cor;
+                    }
+                    p{
+                        color: $texto-normal-cor;
+        
+                    }
+                    .linha2{
+                        height: 0.5px;
+                        width: 80px;
+                        background-color: $borda-cor;
+                    }
+                }
+            }
+    
+    
+            .textoLogin{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.5rem;
+    
+                h1{
+                    font-weight: 800;
+                    color: $preto-cor;
+                }
+        
+                .linha{
+                    width: 130px;
+                    height: 8px;
+                    background-color: $primaria-cor;
+                }
+            }
+            .form{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+    
+    
+                input{
+                    border: 1px solid $borda-cor;
+                    border-radius: 8px;
+                    height: 40px;
+                    padding: 8px;
+                    min-width: 300px;
+                }
+    
+            }
+            .submeter{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                height: 60px;
+                width: 208px;
+                border-radius: 32px;
+                background-color: $primaria-cor;
+                color: $branca-cor;
+    
+                &:hover{
+    
+                    animation: scaleAnimation 0.3s ease forwards;
+                }
+    
+            }
+            .fazerLogin{
+                display: flex;
+                gap: 0.2rem;
+                align-items: center;
+                width: 100px;
+    
+                .p1{
+                    color: $texto-normal-cor;
+                }
+                .p2{
+                    color: $primaria-cor;
+                    cursor: pointer;
+                    font-weight: 300;
+                }
+            }
+        }
+    
+     
+    }
+    
+    @keyframes scaleAnimation {
+        from {
+          transform:scale(1);
+        }
+        to {
+          transform: scale(1.05);
+        }
+      }
+}
+

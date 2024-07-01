@@ -1,0 +1,38 @@
+<div class="principal">
+    <div class="imagemDesktop">
+        <div class="capaCastanha">
+            <div class="logotipo">
+                <img src="../../../assets/icon branco.svg" alt="">
+                <p class="logoText">USHARE</p>
+            </div>
+            <p class="slogan">Partilhe e encontre recursos na sua Comunidade</p>
+        </div>
+    </div>
+
+    <div class="formulario">
+        <div class="logotipo">
+            <img src="../../../assets/icon castanho.svg" alt="">
+            <p class="logoText">USHARE</p>
+        </div>
+        <div class="textoLogin">
+            <h1>Registrar</h1>
+            <div class="linha"></div>
+        </div>
+        <div class="form">
+            <p class="campotipo">TIPO DE UTILIZADOR</p>
+            <mat-form-field>
+                <mat-select [(ngModel)]="tipoUser">
+                    @for (usuario of usuarios; track usuario) {
+                    <mat-option [value]="usuario.value">{{usuario.viewValue}}</mat-option>
+                    }
+            </mat-select>
+            </mat-form-field>
+            <input [(ngModel)]="nome" type="text" placeholder="Nome">
+            <input [(ngModel)]="nif" type="numbers" placeholder="NIF">
+        </div>
+        <div class="botoesForm">
+            <div (click)="navegarRegistro()" class="voltar"> <p>Voltar</p></div>
+            <div (click)="loginUserInfo()"class="submeter"><p>Continuar</p></div>
+        </div>
+    </div>
+</div>

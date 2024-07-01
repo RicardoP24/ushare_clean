@@ -1,0 +1,68 @@
+<div class="popup">
+
+    <div class="teste">
+
+        <div class="texto-botaox">
+            <h2 class="anuncio">Comentários</h2>
+            <img (click)="close()" src="assets/fechar.svg" width="20px">
+        </div>
+        <div class="line"></div>
+
+        <div class="mypost">
+            <div class="owner">
+                <div class="postAuthor">
+                    <div class="profile-photo">
+                        <img src="assets/ellipse-1-icon.svg">
+                    </div>
+                    <div class="post-author">
+                        <p class="nome">{{data.nomeAutor}}</p>
+                        <p class="data">{{ data.datadepub | date:'dd.MM.yyyy' }}</p>
+                    </div>
+
+
+                </div>
+
+                <p>{{data.descricao}}</p>
+
+                <div class="post-content">
+                    <img width="100%" src="{{data.linkimagem}}" class="carpic">
+                </div>
+
+                <p class="comentariosNumero">{{this.comentarios.length}} Comentários </p>
+
+                <div class="line"></div>
+
+
+
+                <div class="comment-sec" *ngFor="let comentario of comentarios">
+                    <div class="profile-photo">
+                        <img src="assets/ellipse-1-icon.svg">
+                    </div>
+                    <div class="Textsection">
+                        <p class="nome">{{ comentario.nomeAutor }}</p>
+                        <p  class="comentario">{{ comentario.comentario }}</p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="line"></div>
+
+                <div class="footer">
+
+                    <div class="profile-photo">
+                        <img src="assets/ellipse-1-icon.svg">
+                    </div>
+
+                    <input #commentField type="text" placeholder="Escreva um comentário">
+
+                    <button (click)="enviarComentario()" class="botaoEnviar">
+                        <img src="assets/Vector.svg" class="icon1" />
+                    </button>
+
+                </div>
+
+
+            </div>
+        </div>

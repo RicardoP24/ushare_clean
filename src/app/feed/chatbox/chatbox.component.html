@@ -1,0 +1,46 @@
+<div id="sideChatBox" class="chatbox-container" [style.display]="showChatbox ? 'block' : 'none'">
+    <div class="chatbox-header">
+        <div class="profile-photo">
+            <img src="assets/ellipse-1-icon.svg" alt="Profile Photo">
+        </div>
+        <div class="author">
+            <p class="nome">{{this.chatParams.nome_user2}}</p>
+            <p class="status">Active now</p>
+        </div>
+
+        <button class="fechar" (click)="toggleChatbox()">
+            <img src="assets/X.svg" class="icon2" />
+        </button>
+
+    </div>
+
+    <div class="line1"></div>
+
+    <div class="chatbox-body">
+        <div class="message">
+            <p class="message-date">23/03/2024 13:55</p>
+
+            <div  class="msns" *ngFor="let msn of mensagens">
+
+                <div *ngIf="eMinhaMsn(msn)" class="my-message">
+                    <p>{{msn.mensagem}}</p>
+                </div>
+                <div class="other-message" *ngIf="!eMinhaMsn(msn)">
+                    <div class="circle"></div>
+
+                    <div class="text">
+                        <p>{{msn.mensagem}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbox-footer">
+        <input #mensagem type="text" placeholder="Type your message...">
+        <button (click)="enviarMensagem()" class="botaoEnviar">
+            <img src="assets/Vector.svg" class="icon1" />
+        </button>
+    </div>
+
+</div>

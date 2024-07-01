@@ -1,0 +1,51 @@
+<div class="principal">
+    <div class="imagemDesktop">
+        <div class="capaCastanha">
+
+            <div class="logotipo">
+                <img src="../../../assets/icon branco.svg" alt="">
+                <p class="logoText">USHARE</p>
+            </div>
+
+            <p class="slogan">Partilhe e encontre recursos na sua Comunidade</p>
+        </div>
+
+    </div>
+
+    <div class="formulario">
+
+        <div class="logotipo">
+            <img src="../../../assets/icon castanho.svg" alt="">
+            <p class="logoText">USHARE</p>
+        </div>
+
+        <div class="google-email">
+
+            <div class="emailLinha">
+                <div class="linha1"></div>
+                <p>Entrar com email</p>
+                <div class="linha2"></div>
+            </div>
+        </div>
+
+
+
+        <div class="textoLogin">
+            <h1>LOGIN</h1>
+            <div class="linha"></div>
+        </div>
+
+
+        <div class="form">
+            <input [(ngModel)]="email" type="text" placeholder="Email">
+            <input [(ngModel)]="password" type="password" placeholder="Password">
+     
+        </div>
+
+        <div (click)="login()" class="submeter">Entrar</div>
+        <div class="criarConta">
+            <p class="p1">Não tem uma conta?</p>
+            <p (click)="navegarRegistro()" class="p2">Criar uma conta</p>
+        </div>
+    </div>
+</div>

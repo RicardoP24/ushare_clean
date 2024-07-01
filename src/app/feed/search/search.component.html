@@ -1,0 +1,78 @@
+<div class="search-popup">
+  <div class="header">
+    <h2 class="titulo">Pesquise anúncios</h2>
+    <div class="close">
+      <img (click)="close()" src="assets/fechar.svg" width="20px">
+    </div>
+  </div>
+
+    <div class="line"></div>
+    <div class="pesquisa">
+        <input #pesquisa type="text" placeholder="Search...">
+        <img src="assets/search-icon-icon.svg" alt="" class="IconS" (click)="search()" />
+      </div>
+    <div class="filters">
+        <mat-form-field>
+            <mat-label>Dist. Máxima</mat-label>
+            <mat-select #distancia>
+              @for (distance of distances; track distance) {
+                <mat-option [value]="distance.value">{{distance.viewValue}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label  >Tipo de anuncio</mat-label>
+            <mat-select #tipoanuncio>
+              @for (TipoAnuncio of tipoAnuncios; track TipoAnuncio) {
+                <mat-option [value]="TipoAnuncio.value">{{TipoAnuncio.viewValue}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+     
+          
+
+        </div>
+
+        <div class="post-container">
+            <div *ngFor="let post of postsFiltrados" class="post">
+                <div class="post-header">
+                    <div class="conjunto">
+                        <div class="profile-photo">
+                            <img src="assets/ellipse-1-icon.svg" alt="Profile Photo">
+                        </div>
+                        <div class="post-author">
+                            <p>{{post.nome}}</p>
+                            <p class="data">{{ post.datadepub | date:'dd.MM.yyyy' }}</p>
+                        </div>
+                    </div>
+                    <p class="status">{{post.estado}}</p>
+                </div>
+
+                <div class="line10"></div>
+                <p class="descText">{{post.descricao}}</p>
+                <div class="post-content">
+                    <img width="100%" src={{post.linkimagem}} class="carpic">
+                </div>
+                <div class="line11"></div>
+                <div class="comment-sec">
+                    <div (click)="openChat()" class="info"  >
+                        <img src="assets/vector-icon7.svg">
+                        <p>Contatar proprietário</p>
+                    </div>
+                    
+                    <div (click)="openComentarios()" class="coment">
+                        <img src="assets/staroutline-icon6.svg">
+                        <p >Comentários</p>
+                    </div>
+                </div>
+                <div class="line11"></div>
+            </div>
+          
+            
+        </div>
+
+
+  </div>
+  

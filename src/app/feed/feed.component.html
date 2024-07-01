@@ -1,0 +1,211 @@
+<div class="navbar">
+    <div class="leftSection">
+        <div class="logo">
+            <img src="../../../assets/icone pequeno.png" alt="">
+            <p class="logotext">USHARE</p>
+        </div>
+    </div>
+    <div class="centerSection">
+        <div class="feedIcon">
+            <fa-icon [icon]="faRss" class="iconRss"></fa-icon>
+            <p>Feed</p>
+            <div class="underline"></div>
+        </div>
+        <div class="friendsIcon"  (click)="openartg(posts,events)">
+            <fa-icon [icon]="faArtigo" class="iconP" ></fa-icon>
+            <p >Meus artigos</p>
+            <div class="underline"></div>
+        </div>
+        <div class="aboutIcon" (click)="openAboutUs()">
+            <fa-icon [icon]="faAboutUs" class="iconP"    ></fa-icon>
+            <p >Sobre Nós</p>
+            <div class="underline"></div>
+        </div>
+    </div>
+    <div class="rightSection">
+
+        <div class="Icons">
+            <img src="assets/search-icon-icon.svg" alt="" class="IconS" (click)="opensearch()" />
+            <img src="assets/logout-icon.svg" alt="" class="IconLg" (click)="logout()" />
+        </div>
+
+        <div class="profilePhoto">
+            <p style="font-weight: 600;">{{dadosUtilizador.nome}} </p>
+        </div>
+
+        <fa-icon [icon]="faHamb" class="iconHamb" (click)="openNav()"></fa-icon>
+    </div>
+    <div #mySidenav class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <p (click)="setActiveSection('publicacoes')">Home</p>
+        <p (click)="setActiveSection('meusartigos-friends')"> Chat</p>
+        <p (click)="setActiveSection('publicacoes')">  Feed</p>
+        <p (click)="setActiveSection('eventos')"> Eventos</p>
+        <p (click)="opensearch()"> Pesquisar</p>
+        <p (click)="openartg(posts,events)"> Meus Artigos</p>
+        <a href="/aboutUs"> Sobre nós</a>
+        <p (click)="logout()"> Logout</p>
+    </div>
+</div>
+
+
+<div class="content">
+
+
+    <div #meusartigosfriends class="meusartigos-friends">
+        <div class="box" (click)="openartg(posts,events)">
+            <img src="assets/vector-icon.svg" class="iconPx"   />
+            <h3 >Os meus artigos</h3>
+        </div>
+
+        <div class="friends">
+            <div class="col-f">
+                <img src="assets/users-icon.svg" class="iconU" />
+                <h3>Conexões</h3>
+                <p>({{conexoes.length}})</p>
+            </div>
+
+                <div   class="nomeA" *ngFor="let conx of conexoes">
+                    <div (click)="contatarProprietario({nomeAutor:conx.nome, id_user:conx.id_user })" class="conjunto">
+                        <div class="profile-photo">
+                            <img src="assets/ellipse-1-icon.svg" alt="Profile Photo" >
+                        </div>
+                        <div class="post-author">
+                            <p class="nome">{{conx.nome}}</p>
+                            <p class="status"> online</p>
+                        </div>
+                    </div>
+                </div>
+
+     
+
+
+
+
+        </div>
+    </div>
+
+    <div #publicacoes class="publicacoes">
+
+        <div class="posts">
+            <div (click)="opensubbtn()" class="searchbar">
+                <p>Solicite ou disponibilize um recurso ...</p>
+
+                <div class="canto">
+
+                    <div class="paperClipOutline">
+                        <img src="assets/paperclipoutline-icon.svg" alt="" class="icon39" />
+                    </div>
+                    <button class="botaoEnviar">
+                        <img src="assets/send-icon.svg" alt="" class="icon19" />
+                    </button>
+                </div>
+
+            </div>
+
+
+
+            <div class="post-container">
+                 <div *ngFor="let post of posts" class="post">
+                    <div class="post-header">
+                        <div (click)="openperfil(post,events)" class="conjunto">
+                            <div class="profile-photo">
+                                <img src="assets/ellipse-1-icon.svg" alt="Profile Photo" >
+                            </div>
+                            <div class="post-author" >
+                                <p >{{ post.nomeAutor }}</p>
+                                <p class="data">{{ post.datadepub | date:'dd.MM.yyyy' }}</p>
+                            </div>
+                        </div>
+                        <p class="status">{{ post.tipoanuncio }}</p>
+                    </div>
+                
+                    <div class="line10"></div>
+                    <p class="descText">{{ post.descricao }}</p>
+                    <div class="post-content">
+                        <img width="100%" [src]="post.linkimagem" class="carpic">
+                    </div>
+                    <div class="line11"></div>
+                    <div class="comment-sec">
+
+                        <div *ngIf="post.meuPost" (click)="verInteressados(post)" class="info"  >
+                            <img src="assets/Inter.svg">
+                            <p class="inter">Ver interações</p>
+                        </div>
+
+                        <div *ngIf="!post.meuPost" class="info">
+                            <img src="assets/vector-icon7.svg">
+                            <p (click)="this.contatarProprietario(post)">Contatar proprietário</p>
+                        </div>
+                
+                        <div class="coment" (click)="opencoment(post)">
+                            <img src="assets/staroutline-icon6.svg">
+                            <p >Comentários</p>
+                        </div>
+                    </div>
+                </div>
+                 
+ 
+               
+            </div>
+        </div>
+    </div>
+
+    <div #eventos class="eventos">
+        <div *ngFor="let event of events" class="event" >
+
+            <div class="post-header">
+        
+                <div class="org-photo">
+                    <img src="assets/ellipse-1-icon.svg">
+                </div>
+        
+                <div class="event-author">
+                    <p>{{event.nomeAutor}}</p>
+                    <p class="data">{{ event.datadepub | date:'dd.MM.yyyy' }}</p>
+                </div>
+        
+            </div>
+        
+        
+            <div class="line1"></div>
+        
+        
+            <p>{{event.descricao}}</p>
+            <div class="post-content">
+                <img width="100%" [src]="event.linkimagem" class="carpic">
+            </div>
+
+        
+        
+            <div class="line1"></div>
+        
+        
+            <div class="comment-sec">
+                <div *ngIf="event.meuPost" (click)="verInteressados(event)" class="info"  >
+                    <img src="assets/Inter.svg">
+                    <p class="inter">Ver interações</p>
+                </div>
+
+                <div *ngIf="!event.meuPost" class="info">
+                    <img src="assets/vector-icon7.svg">
+                    <p (click)="this.contatarProprietario(event)">Contatar proprietário</p>
+                </div>
+                <div (click)="opencoment(event)" class="coment">
+                    <img src="assets/staroutline-icon6.svg">
+                    <p>Comentários</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="chat">
+        <app-chatbox [chatParams]="chatParams" #chatboxRef />
+    </div>
+
+    <div class="inter">
+        <app-interresados [post]="interess" #interessados />
+    </div>
+</div>

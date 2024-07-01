@@ -1,0 +1,70 @@
+<div class="principal">
+    <div class="imagemDesktop">
+        <div class="capaCastanha">
+
+            <div class="logotipo">
+                <img src="../../../assets/icon branco.svg" alt="">
+                <p class="logoText">USHARE</p>
+            </div>
+
+            <p class="slogan">Partilhe e encontre recursos na sua Comunidade</p>
+        </div>
+
+    </div>
+
+    <div class="formulario">
+        <div class="border ">
+
+            <div class="alinhamentoForm">
+
+
+                <div class="textoLogin">
+                    <h1>ENCONTRE E PARTILHE RECURSOS</h1>
+                </div>
+
+                <div class="form">
+
+                    <mat-form-field class="matForm distritosDropdown">
+                        <mat-label class="title">Distrito</mat-label>
+                        <mat-select [(ngModel)]="distritoAtual" (selectionChange)="updateMunicipios($event.value)">
+                            <mat-option *ngFor="let distrito of distritos"
+                                [value]="distrito.id">{{distrito.nome}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="matForm municipiosDropdown">
+                        <mat-label class="municipiosDropdown">Municipios</mat-label>
+                        <mat-select [(ngModel)]="municipioAtual">
+                            <mat-option class="distritosDropdown" *ngFor="let municipio of municipios"
+                                [value]="municipio.id">{{municipio.nome}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                    <div class="conteudo">
+                        <div class="icon">
+                            <fa-icon [icon]="faLock" class="fa-lg"></fa-icon>
+                        </div>
+                        <div class="info_partilha_de_dados">
+                            <p>A sua morada só será utilizada para posicioná-lo na <br />
+                                comunidade correta. Não partilharemos sua localização a terceiros</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="botoesForm">
+                    <div (click)="navegarLocationPermission()" class="submeter">
+                        <p>Continuar</p>
+                    </div>
+                    <div (click)="navegarUserInfo()" class="voltar">
+                        <p>Voltar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

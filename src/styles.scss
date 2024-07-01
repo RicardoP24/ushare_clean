@@ -1,0 +1,155 @@
+/* You can add global styles to this file, and also import other style files */
+$primaria-cor: #955E42;
+$branca-cor: #FFFFFF;
+$verde-cor: #52D997;
+$amarelo-cor: #ffc107;
+$vermelho-cor: #dc3545;
+$preto-cor: #000000;
+$texto-normal-cor: #505153;
+$texto-pequeno-cor: #C0C5CF;
+$borda-cor: #828282;
+$icone-cinza-cor: #AEAEAE;
+$circulo-cinza-cor: #D9D9D9;
+
+
+@function transparentize($color, $alpha: 1) {
+  @return rgba($color, $alpha);
+}
+
+.mat-mdc-dialog-container {
+  .mdc-dialog__surface {
+    border-radius: var(--mdc-dialog-container-shape, 4px);
+    border-radius: 16px;
+    overflow: hidden;
+
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.colorSnackSuccess {
+ 
+  &.mat-mdc-snack-bar-container {
+
+    .mdc-snackbar__label {
+      background-color: $verde-cor;
+    }
+
+    .mat-mdc-button-touch-target {
+      background-color: $verde-cor;
+
+    }
+
+    .mdc-snackbar__surface {
+      background-color: $verde-cor !important;
+
+    }
+  }
+}
+
+@media (max-width:750px) {
+  .mat-mdc-dialog-container {
+    height: 100vh;
+
+    .mdc-dialog__surface {
+      height: 100vh;
+
+    }
+  }
+}
+
+
+.mat-mdc-snack-bar-container {
+
+  .mdc-snackbar__label {
+    background-color: $vermelho-cor;
+  }
+
+  .mat-mdc-button-touch-target {
+    background-color: $vermelho-cor;
+
+  }
+
+  .mdc-snackbar__surface {
+    background-color: $vermelho-cor !important;
+
+  }
+}
+
+
+
+.mat-mdc-button {
+
+  .mdc-button__label {
+    color: white;
+  }
+}
+
+
+.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) {
+  .mat-mdc-text-field-wrapper {
+    background-color: white;
+    border: 1px solid $borda-cor;
+    border-radius: 8px;
+    height: 40px;
+  }
+}
+
+.mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label {
+  font-size: 10px;
+}
+
+.mat-mdc-form-field-subscript-wrapper,
+.mat-mdc-form-field-bottom-align::before {
+  display: none;
+}
+
+.principal {
+  .formulario {
+    .form {
+      .matForm {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+
+mat-form-field:has(mat-select) div[matformfieldlineripple] {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+
+}
+
+
+
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  /* Fallback to sans-serif if Montserrat isn't available */
+}

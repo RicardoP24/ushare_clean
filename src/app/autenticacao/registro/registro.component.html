@@ -1,0 +1,54 @@
+<div class="principal">
+    <div class="imagemDesktop">
+        <div class="capaCastanha">
+
+            <div class="logotipo">
+                <img src="../../../assets/icon branco.svg" alt="">
+                <p class="logoText">USHARE</p>
+            </div>
+
+            <p class="slogan">Partilhe e encontre recursos na sua Comunidade</p>
+        </div>
+
+    </div>
+
+    <div class="formulario">
+
+        <div class="logotipo">
+            <img src="../../../assets/icon castanho.svg" alt="">
+            <p class="logoText">USHARE</p>
+        </div>
+
+        <div class="google-email">
+            <div class="google">
+                <img src="../../../assets/Google.png" width="30px" height="27px" alt="">
+                <p>Entrar com a google</p>
+            </div>
+            <div class="emailLinha">
+                <div class="linha1"></div>
+                <p>Entrar com email</p>
+                <div class="linha2"></div>
+            </div>
+        </div>
+
+
+
+        <div class="textoLogin">
+            <h1>REGISTRAR</h1>
+            <div class="linha"></div>
+        </div>
+
+
+        <div class="form">
+            <input [(ngModel)]="email" type="email" placeholder="Email">
+            <input [(ngModel)]="password" type="password" placeholder="Password">
+            <input [(ngModel)]="passwordConfirm" type="password" placeholder="Confirmar Password">
+        </div>
+
+        <div class="submeter" (click)="registrarEmailEPass()">Continuar</div>
+        <div class="fazerLogin">
+            <p class="p1">Já tem conta?</p>
+            <p (click)="navegarLogin()" class="p2">Fazer login</p>
+        </div>
+    </div>
+</div>
